@@ -1,17 +1,12 @@
-from sys import stdin
+def solve(n):
+    for i in range(n):
+        word = input()
 
-def solve(x, y, n):
-    if n % x == y:
-        print(n)
-    elif n % x > y:
-        print(n-((n%x)-y))
-    else:
-        print(n-x+(y-(n%x)))
+        if len(word) > 10:
+            print(word[0] + str(len(word) - 2) + word[-1])
+        else:
+            print(word)
 
+n = int(input())
 
-t = int(stdin.readline())
-
-for _ in range(t):
-	x, y, n = list(map(int, stdin.readline().rstrip().split()))
-
-	solve(x, y, n)
+solve(n)
